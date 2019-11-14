@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Codereadings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @codereadings.each do |codereading| %>
+      <tr>
+        <td><%= codereading.title %></td>
+        <td><%= codereading.content %></td>
+        <td><%= link_to 'Show', codereading %></td>
+        <td><%= link_to 'Edit', edit_codereading_path(codereading) %></td>
+        <td><%= link_to 'Destroy', codereading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Codereading', new_codereading_path %>
